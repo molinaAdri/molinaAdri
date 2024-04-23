@@ -20,14 +20,25 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
+circle;
+circles = [];
 
         // TODO 2 : Create a function that draws a circle 
-        
+var drawCircle = function(){
 
+//randomCircleInArea(area,randomizeAlpha, addCross, bordercolor, borderThickness, randomRadicalProps)
+
+circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+physikz.addRandomVelocity(circle,canvas);
+view.addChild(circle);
+circles.push(circle);
+}
         // TODO 3 / 7 : Call the drawCircle() function 
-
-
+        drawCircle()
+        drawCircle()
+        drawCircle()
+        drawCircle()
+        drawCircle()
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -39,11 +50,17 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-
-            
+            physikz.updatePosition([0]);
+            physikz.updatePosition([1]);
+            physikz.updatePosition([2]);
+            physikz.updatePosition([3]);
+            physikz.updatePosition([4]);
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           
-
+            game.checkCirclePosition([0]);
+            game.checkCirclePosition([1]);
+            game.checkCirclePosition([2]);
+            game.checkCirclePosition([3]);
+            game.checkCirclePosition([4]);
             // TODO 9 : Iterate over the array
            
             
@@ -60,9 +77,18 @@ var init = function (window) {
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
             }
-            
+            if ( circle.y > canvas.height){
+                circle.y = 0;
+            }
+            if (){
+
+            }
+        }
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+            var loops = 0;
+            for (var l = 0; l < 10; l++){
+console.log(loops)
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
